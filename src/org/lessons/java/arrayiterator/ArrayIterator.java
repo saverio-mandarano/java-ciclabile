@@ -1,5 +1,7 @@
 package org.lessons.java.arrayiterator;
 
+import java.util.Random;
+
 public class ArrayIterator {
     private int[] intList;
     private int currentIndex;
@@ -40,5 +42,18 @@ public class ArrayIterator {
         newArr[newArr.length - 1] = newElement;
 
         this.intList = newArr;
+    }
+
+    public void addInt() {
+        int[] newArr = new int[this.intList.length + 1];
+
+        for (int i = 0; i < intList.length; i++) {
+            newArr[i] = this.intList[i];
+        }
+
+        Random num = new Random();
+        newArr[newArr.length - 1] = num.nextInt(100);
+        this.intList = newArr;
+
     }
 }
