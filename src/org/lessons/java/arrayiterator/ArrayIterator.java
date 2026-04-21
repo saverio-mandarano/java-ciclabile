@@ -12,6 +12,10 @@ public class ArrayIterator {
         this.intList = intList;
     }
 
+    public ArrayIterator() {
+        this.intList = new int[0];
+    }
+
     public boolean hasNextInt() {
         return currentIndex < intList.length;
     }
@@ -24,5 +28,17 @@ public class ArrayIterator {
             throw new IllegalStateException("Error, non c'è NextInt");
         }
 
+    }
+
+    public void addInt(int newElement) {
+        int[] newArr = new int[this.intList.length + 1];
+
+        for (int i = 0; i < intList.length; i++) {
+            newArr[i] = this.intList[i];
+        }
+
+        newArr[newArr.length - 1] = newElement;
+
+        this.intList = newArr;
     }
 }

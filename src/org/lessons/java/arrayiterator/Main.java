@@ -2,21 +2,34 @@ package org.lessons.java.arrayiterator;
 
 public class Main {
     public static void main(String[] args) {
-        // System.out.println("ciao");
         int[] intList = { 1, 2, 3, 0 };
 
-        ArrayIterator arr1 = new ArrayIterator(intList);
-        // for (int i : intList) {
-        // System.out.println(i);
+        ArrayIterator obj2 = new ArrayIterator(intList);
+
+        while (obj2.hasNextInt()) {
+            System.out.println(obj2.getNextInt());
+        }
+
+        System.out.println("current index: " + obj2.getCurrentIndex());
+
+        // BONUS
+        // ArrayIterator obj = new ArrayIterator();
+
+        // while (obj.hasNextInt()) {
+        // System.out.println(obj.getNextInt());
         // }
 
-        // while (arr1.hasNextInt()) {
-        // System.out.println(arr1.getNextInt());
+        // obj.addInt(1);
+
+        // while (obj.hasNextInt()) {
+        // System.out.println(obj.getNextInt());
         // }
 
-        System.out.println(arr1.getCurrentIndex());
-        arr1.getNextInt();
-        System.out.println(arr1.getCurrentIndex());
+        // obj.addInt(10);
+
+        // while (obj.hasNextInt()) {
+        // System.out.println(obj.getNextInt());
+        // }
 
     }
 
